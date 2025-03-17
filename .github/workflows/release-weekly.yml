@@ -24,5 +24,7 @@ jobs:
         ZAP_JAVA_VERSION: 17
         ZAP_WEEKLY_ADDONS_NO_TEST: ${{ vars.ZAP_WEEKLY_ADDONS_NO_TEST }}
         ZAP_WEEKLY_QUIET: ${{ vars.ZAP_WEEKLY_QUIET }}
-        ZAP_CHALK: 1
-      run: ./gradlew "-Dorg.gradle.jvmargs=-Xmx2g -XX:MaxMetaspaceSize=512m" :zap:createWeeklyRelease
+      run: |
+        chmod +x ./gradlew
+        ls -lha gradlew
+        ./gradlew "-Dorg.gradle.jvmargs=-Xmx2g -XX:MaxMetaspaceSize=512m" :zap:createWeeklyRelease
