@@ -17,12 +17,6 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: 17
-    - name: Set up Chalk
-      uses: crashappsec/setup-chalk-action@main
-      with:
-        password: ${{ secrets.CHALK_PASSWORD }}
-        public_key: ${{ secrets.CHALK_PUBLIC_KEY }}
-        private_key: ${{ secrets.CHALK_PRIVATE_KEY }}
     - name: Build and Release
       env:
         ZAPBOT_TOKEN: ${{ secrets.ZAPBOT_TOKEN }}
